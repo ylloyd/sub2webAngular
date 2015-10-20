@@ -13,11 +13,6 @@
           '@': {
             templateUrl: 'src/app/home/home.tpl.html',
             controller: 'HomeCtrl as home',
-            resolve: {
-              data: function(DataService) {
-                return DataService.get();
-              }
-            }
           }
         }
       });
@@ -27,9 +22,8 @@
    * @name  HomeCtrl
    * @description Controller
    */
-  function HomeCtrl(data) {
-    var home = this;
-    home.data = data.data;
+  function HomeCtrl() {
+    var vm = this;
   }
 
   angular.module('home', [])

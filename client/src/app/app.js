@@ -13,12 +13,10 @@
       .state('root', {
         views: {
           'header': {
-            templateUrl: 'src/common/header.tpl.html',
-            controller: 'HeaderCtrl'
+            template: '<div>Header</div>',
           },
           'footer': {
-            templateUrl: 'src/common/footer.tpl.html',
-            controller: 'FooterCtrl'
+            template: '<div>Footer</div>',
           }
         }
       });
@@ -35,11 +33,6 @@
   angular.module('app', [
       'ui.router',
       'home',
-      'getting-started',
-      'common.header',
-      'common.footer',
-      'common.services.data',
-      'common.directives.version',
       'common.filters.uppercase',
       'common.interceptors.http',
       'templates'

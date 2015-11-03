@@ -1,7 +1,7 @@
-	(function(){
+(function(){
 	'use strict';
 
-	function MovieService($http, $log){
+	function MovieNowPlayingService($http, $log){
 
 		var service = {};
 
@@ -10,11 +10,11 @@
 		/*
 		* Get Movie
 		*/
-		service.getMovie = function(){
+		service.getMovieNowPlaying = function(){
 
 			var key = 'b443d2efe7e63b285232e486225b297a';
 
-			return $http.get('https://api.themoviedb.org/3/movie/popular', {
+			return $http.get('https://api.themoviedb.org/3/movie/now_playing', {
 				params:{
 					api_key: key
 				}
@@ -30,6 +30,6 @@
 		return service;
 	}
 
-	angular.module('services.movie', [])
-		.factory('MovieService', MovieService);
+	angular.module('services.movie-now_playing', [])
+		.factory('MovieNowPlayingService', MovieNowPlayingService);
 })();

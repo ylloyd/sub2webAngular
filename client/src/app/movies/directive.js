@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 
-	function MoviePopular(){
+	function MoviePopular(MovieService){
 		return{
 			restrict: 'EA',
 			replace: true,
@@ -10,10 +10,9 @@
 			controllerAs: 'vm',
 			bindToController: true,
 			/*jshint unused:false*/
-			controller: function($log, MovieService){
+			controller: function($log){
 				var vm = this;
 				MovieService.getMovie().then(function(data){
-					console.log(data.data.results);
 					vm.movies = data.data.results;
 				});
 			},

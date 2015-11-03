@@ -12,9 +12,11 @@
 			/*jshint unused:false*/
 			controller: function($log, MovieLatestService){
 				var vm = this;
-				MovieLatestService.getMovieLast().then(function(data){
-					console.log(data.data.results);
-					vm.movies = data.data.results;
+				MovieLatestService.getMovieLast().then(function(movieData){
+					vm.movies = movieData.data;
+					console.log('toto');	
+					console.log(vm.movies);
+					//console.log(movieData.data.original_title);
 				});
 			},
 			link: function(scope, elm, attrs){

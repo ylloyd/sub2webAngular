@@ -37,9 +37,11 @@
       'appFooterComponent',
       'movie-popular',
       'movie-latest',
+      'movie-now_playing',
       'common.filters.uppercase',
       'common.interceptors.http',
-      'templates'
+      'templates',
+      'angular-loading-bar'
     ])
     .config(config)
     .run(run)

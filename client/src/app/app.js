@@ -36,6 +36,7 @@
       'appHeaderComponent',
       'appFooterComponent',
       'movie-popular',
+      'movie-latest',
       'common.filters.uppercase',
       'common.interceptors.http',
       'templates'

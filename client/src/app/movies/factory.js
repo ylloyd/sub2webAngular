@@ -29,11 +29,11 @@
 		/*
 		* Get Movie detail
 		*/
-		service.getMovieDetail = function(){
+		service.getMovieDetail = function(id){
 
 			var key = 'b443d2efe7e63b285232e486225b297a';
 
-			return $http.get('https://api.themoviedb.org/3/movie/id', {
+			return $http.get('http://api.themoviedb.org/3/movie/'+id, {
 				params:{
 					api_key: key
 				}

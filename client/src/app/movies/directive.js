@@ -18,7 +18,7 @@
 				$scope.move = function(number){
 					$state.go("root.movie.detail",{id:number });
 				}
-
+				$scope.back =function(){ $state.go("root.movie");}
 			},
 			link: function(scope, elm, attrs){
 
@@ -34,10 +34,12 @@
 			controllerAs: 'vm',
 			bindToController: true,
 			/*jshint unused:false*/
-			controller: function($log, $state, $scope, $id){
+			controller: function($log, $state, $scope, $stateParams){
 				var vm = this;
-				MovieService.getMovieDetail().then(function(data){
-					vm.movies = data.data.results;
+				$log.log("Mes parametres: ",$stateParams);
+				MovieService.getMovieDetail($stateParams.id).then(function(data){
+					$scope.movies = data.data;
+					$log.info("my data", vm.movies);
 				});
 
 			},
@@ -47,7 +49,8 @@
 		};
 	}
 	angular.module('moviePopularDirective', ['services.movie'])
-		.directive('moviePopular', MoviePopular);
+		.directive('moviePopular', MoviePopular)
+		.directive('movieDetail', MovieDetail);
 })();
 
 

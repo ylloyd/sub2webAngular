@@ -7,11 +7,19 @@
    */
   function config($stateProvider) {
     $stateProvider
-      .state('root.moviePopular', {
+      .state('root.movie', {
         url: '/movie',
         views: {
           '@': {
             template: '<movie-popular></movie-popular>',
+          }
+        }
+      })
+      .state('root.movie.detail', {
+        url: '/detail/:id',
+        views: {
+          '@': {
+            template: '<movie-detail></movie-detail>',
           }
         }
       });

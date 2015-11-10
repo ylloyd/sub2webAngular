@@ -25,3 +25,17 @@
 	angular.module('moviePopularDirective', ['services.movie'])
 		.directive('moviePopular', MoviePopular);
 })();
+
+
+/*
+$q.when(noPromise.getResult()).then(function(result) {
+                     $rootScope.status = result.status;
+                 });
+
+                 controller: function($log, $q){
+				var vm = this;
+				$q.when(MovieService.getMovie()).then(function(data){
+					vm.movies = data.data.results;
+				});
+			},*/
+			

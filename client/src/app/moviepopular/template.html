@@ -4,7 +4,6 @@
 		<li data-ng-repeat="movie in ::vm.movies track by $index">
 			<h2>{{ ::movie.original_title }}</h2>
 			<img data-ng-src="https://image.tmdb.org/t/p/w154{{ ::movie.poster_path }}" ng-click="move(movie.id)"/>
-
 		</li>
 	</ul>
 </div>

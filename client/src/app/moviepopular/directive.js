@@ -1,19 +1,21 @@
 (function(){
 	'use strict';
 
-	function Movie(MovieService){
+	function MoviePopular(){
 		return{
 			restrict: 'EA',
 			replace: true,
-			templateUrl: './src/app/movies/template.html',
+			templateUrl: './src/app/moviepopular/template.html',
 			scope: {},
 			controllerAs: 'vm',
 			bindToController: true,
 			/*jshint unused:false*/
-			controller: function($log){
+			controller: function($log, $state, $scope, MoviePopularService){
 				var vm = this;
-				MovieService.getMovie().then(function(data){
-					vm.movies = data.data.results;
+				MoviePopularService.getMoviePopular().then(function(popularmovie){
+					$log.info('Route correcte');
+					console.log('Route correcte');
+					vm.movies = popularmovie.data.results;
 				});
 			},
 			link: function(scope, elm, attrs){
@@ -22,8 +24,8 @@
 		};
 	}
 
-	angular.module('movieDirective', ['services.movie'])
-		.directive('movie', Movie);
+	angular.module('moviePopularDirective', ['services.moviepopular'])
+		.directive('moviePopular', MoviePopular);
 })();
 
 
